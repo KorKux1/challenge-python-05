@@ -3,37 +3,37 @@ import math
 
 def square_area(side):
     """Returns the area of a square"""
-    return 4
+    return side**2
 
 
 def rectangle_area(base, height):
     """Returns the area of a rectangle"""
-    return 12
+    return (base * height)
 
 
 def triangle_area(base, height):
     """Returns the area of a triangle"""
-    return 6
+    return (base * height) / 2
 
 
 def rhombus_area(diagonal_1, diagonal_2):
     """Returns the area of a rhombus"""
-    return 17.5
+    return (diagonal_1 * diagonal_2) / 2
 
 
 def trapezoid_area(base_minor, base_major, height):
     """Returns the area of a trapezoid"""
-    return 16
+    return ((base_major + base_minor) / 2 ) * height
 
 
 def regular_polygon_area(perimeter, apothem):
     """Returns the area of a regular polygon"""
-    return 10
+    return (perimeter * apothem) / 2
 
 
 def circumference_area(radius):
     """Returns the area of a circumference"""
-    return 9.424
+    return float('%.3f'%(radius * math.pi))
 
 
 if __name__ == '__main__':
@@ -86,7 +86,7 @@ if __name__ == '__main__':
 
         def test_circumference_area(self):
             """Test the function to find the area of a circle with radius greater than zero"""
-            self.assertEqual(9.424, circumference_area(self.values['radius']))
+            self.assertEqual(9.425, circumference_area(self.values['radius']))
 
         def tearDown(self):
             del(self.values)
